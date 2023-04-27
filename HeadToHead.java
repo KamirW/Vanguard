@@ -1,25 +1,23 @@
 import java.util.ArrayList;
 
 public class HeadToHead {
-	public static void main(String[] args) {
+	
+	ArrayList<Team> teams = new ArrayList<Team>();
+	public Team winner = null;
+	
+	public Team getMatchup() {
 		
-		
-		ArrayList<Team> teams = new ArrayList<Team>();
-		
-		public Team winner = null;
-		
-		if (teams.get(0).getTeamWorth() > teams.get(1).getTeamWorth() ) {
-			winner = teams.get(0).getName();
+		if(teams.get(0).getTeamWorth()>teams.get(1).getTeamWorth()) {
+			winner = teams.get(0);
+			teams.get(0).addWin();
+			teams.get(1).addLoss();
 		} else {
-			winner = teams.get(1).getName();
+			winner = teams.get(1);
+			teams.get(1).addWin();
+			teams.get(0).addLoss();
 		}
 		
-		System.out.println("                WEEK 1 MATCHUP");
-		System.out.println("\n\n\n");
-		System.out.println("%10s vs %10s", teams.get(0).getName(), teams.get(1).getName());
-		System.out.printf("%15s winner");
-		
-		
-
+		return winner;
 	}
+	
 }
