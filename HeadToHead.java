@@ -6,7 +6,7 @@ public class HeadToHead {
 		
 		ArrayList<Team> teams = new ArrayList<Team>();
 		
-		public Team winner = "";
+		public Team winner = null;
 		
 		if (teams.get(0).getTeamWorth() > teams.get(1).getTeamWorth() ) {
 			winner = teams.get(0).getName();
