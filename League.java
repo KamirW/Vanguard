@@ -2,16 +2,13 @@ import java.util.LinkedList;
 
 public class League {
 	private String name, manager;
-	private int pointMax, wins, losses, ties;
-	private LinkedList<String> teams;
+	private int pointMax;
+	private LinkedList<Team> teams;
 
 	public League(String name, String manager, int pointMax, LinkedList teams) {
 		this.name = name;
 		this.pointMax = pointMax;
 		this.teams = teams;
-		wins = 0;
-		losses = 0;
-		ties = 0;
 		this.manager = manager;
 	}
 
@@ -27,30 +24,26 @@ public class League {
 		this.teams = teams;
 		pointMax = 200;
 	}
+	
+	public League(String name, Team team) {
+		this.name=name;
+		teams.add(team);
+		
+	}
 
 	public void removeTeam(String player) {
 		teams.remove(player);
 	}
 
-	public void addTeam(String player) {
-		teams.add(player);
+	public void addTeam(Team team) {
+		teams.add(team);
 	}
 
 	private void setPointMax(int newMax) {
 		pointMax = newMax;
 	}
 
-	public void addWin() { // set wins method team
-		wins++;
-	}
-
-	public void addLoss() { // set losses method team
-		losses++;
-	}
-
-	public void addTie() { // set ties method team
-		ties++;
-	}
+	
 
 	public String getName() { // set Ties method
 		return name;
@@ -64,36 +57,29 @@ public class League {
 		return pointMax;
 	}
 
-	public int getWins(String team) { // Change to get team.wins
-		return wins;
-	}
+	
 
-	public int getLosses() {// Change to get team.losses
-		return losses;
-	}
-
-	public int getTies() {// Change to get team.ties
-		return ties;
-	}
-
-	public LinkedList<String> getTeams() {
+	public LinkedList<Team> getTeams() {
 		return teams;
 	}
 
-	public void initiateHeadToHead(String team1, String team2) { // These scores are placeholders for what will be
+	public void initiateHeadToHead(Team team1, Team team2) { // These scores are placeholders for what will be
 																	// team1.getScore and team2.getScore
 		int score1 = 1, score2 = 2;
 
 		if (score1 > score2) {
-			addWin(); // team1.addwins team2.addLoss
+			team1.addWin();
+			team2.addLoss();// team1.addwins team2.addLoss
 		}
 
 		else if (score1 == score2) {
-			addTie(); // team1.addTie, team2.addTie
+			team1.addTie();// team1.addTie, team2.addTie
+			team2.addTie();
 		}
 
 		else {
-			addLoss(); // team2.addWin, team1.addLoss
+			team1.addLoss();
+			team2.addWin();// team2.addWin, team1.addLoss
 		}
 
 	}
