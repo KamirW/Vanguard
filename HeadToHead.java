@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class HeadToHead {
 	
 	ArrayList<Team> teams = new ArrayList<Team>();
-	public Team winner = null;
+	private Team winner = null;
 	
 	public Team getMatchup() {
 		
