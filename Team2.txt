@@ -1,0 +1,19 @@
+Team 2
+QB: Lamar Jackson, Ravens, 16.52, 4
+RB1: Derrick Henry, Titans, 9.79, 2
+RB2: Alvin Kamara, Saints, 18.00, 5
+WR1: Davante Adams, Raiders, 16.90, 4
+WR2: Steffon Diggs, Bills, 24.40, 3
+TE: George Kittle, 49ers, 4.70, 1
+FLEX: Calvin Ridley, 6.60, 2
+DEFENSE/SPECIAL TEAMS: Los Angeles Rams, 5.00, 3
+KICKER: Rodrigo Blankenship, Colts, 6.00, 1
+
+BENCH
+Chase Edmonds, RB, Dolphins, 1
+Robert Woods, WR, Titans, 2
+Cooper Kupp, WR, Rams, 1
+Trey Sermon, RB, 49ers, 3
+Mike Gesicki, TE, Dolphins, 2
+Evan Engram, TE, Jaguars, 2
+Antonio Gibson, RB, Commanders, 1

@@ -1,0 +1,19 @@
+Team 1
+QB: Patrick Mahomes, Chiefs, 31.42, 5
+RB1: Nick Chubb, Browns, 12.44, 4
+RB2: Josh Jacobs, Raiders, 11.10, 2
+WR1: Justin Jefferson, Vikings, 9.10, 1
+WR2: A.J. Brown, Eagles, 13.10, 2
+TE: Travis Kelce, Chiefs, 13.70, 1
+FLEX: Tyreek Hill, Dolphins, 5.10, 3
+DEFENSE/SPECIAL TEAMS: 49ers, 13.00, 4
+KICKER: Justin Tucker, Ravens, 10.00, 3
+
+BENCH
+Tony Pollard, RB, Cowboys, 2
+Gus Edwards, RB, Ravens, 3
+Nelson Agholor, WR, Patriots, 1
+Hunter Henry, TE, Patriots, 1
+Cole Beasley, WR, Bills, 2
+Marquez Valdes-Scantling, WR, Chiefs, 1
+Jonathan Taylor, RB, Colts, 2
