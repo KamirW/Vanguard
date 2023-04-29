@@ -16,6 +16,8 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class StartScreen extends JFrame {
 
@@ -62,6 +64,15 @@ public class StartScreen extends JFrame {
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 38));
 		btnNewButton.setBounds(170, 424, 150, 54);
+		btnNewButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("You clicked the start button");
+				System.out.println("This should lead to Alex's screen");
+			}
+		});
+		
 		panel.add(btnNewButton);
 	}
 	
