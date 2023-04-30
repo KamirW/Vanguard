@@ -8,7 +8,7 @@ public class Player
     private String position;
     private int weeklyPoints;
 
-    public Player(String name, String position, int points)
+    public Player(String name, String position, double points)
     {
         this.name = name;
         this.position = position;
@@ -46,7 +46,7 @@ public class Player
         return this.weeklyPoints;
     }
 
-    public int getPoints()
+    public double getPoints()
     {
         return this.points;
     }
