@@ -3,7 +3,7 @@ import Team;
 public class Player
 {
     private Team team;
-    private int points;
+    private double points;
     private String name;
     private String position;
     private int weeklyPoints;
