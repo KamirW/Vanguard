@@ -19,6 +19,13 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * 
+ * @author Kamir Walton
+ * 
+ * This class creates the GUI for the start screen
+ *
+ */
 public class StartScreen extends JFrame {
 
 	private JPanel contentPane;
@@ -35,6 +42,7 @@ public class StartScreen extends JFrame {
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 509, 593);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -48,32 +56,35 @@ public class StartScreen extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("VANGUARD");
-		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 49));
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(76, 11, 338, 70);
-		panel.add(lblNewLabel);
+		JLabel lblTitleLabel = new JLabel("VANGUARD");
+		lblTitleLabel.setFont(new Font("Arial Black", Font.PLAIN, 49));
+		lblTitleLabel.setForeground(Color.WHITE);
+		lblTitleLabel.setBounds(76, 11, 338, 70);
+		panel.add(lblTitleLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(StartScreen.class.getResource("/images/VanguardLogoMedium.png")));
-		lblNewLabel_1.setBounds(97, 97, 307, 284);
-		panel.add(lblNewLabel_1);
+		JLabel lblLogoLabel = new JLabel("");
+		lblLogoLabel.setIcon(new ImageIcon(StartScreen.class.getResource("/images/VanguardLogoMedium.png")));
+		lblLogoLabel.setBounds(97, 97, 307, 284);
+		panel.add(lblLogoLabel);
 		
-		JButton btnNewButton = new JButton("Start");
-		btnNewButton.setForeground(Color.BLACK);
-		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 38));
-		btnNewButton.setBounds(170, 424, 150, 54);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnStartButton = new JButton("Start");
+		btnStartButton.setForeground(Color.BLACK);
+		btnStartButton.setBackground(Color.WHITE);
+		btnStartButton.setFont(new Font("Arial Black", Font.PLAIN, 38));
+		btnStartButton.setBounds(170, 424, 150, 54);
+		btnStartButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("You clicked the start button");
 				System.out.println("This should lead to Alex's screen");
+				DisplayPlayersScreen dps = new DisplayPlayersScreen();
+				setVisible(false);
+				dps.setVisible(true);
 			}
 		});
 		
-		panel.add(btnNewButton);
+		panel.add(btnStartButton);
 	}
 	
 }
