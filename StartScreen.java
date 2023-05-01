@@ -76,8 +76,6 @@ public class StartScreen extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("You clicked the start button");
-				System.out.println("This should lead to Alex's screen");
 				DisplayPlayersScreen dps = new DisplayPlayersScreen();
 				setVisible(false);
 				dps.setVisible(true);

@@ -15,19 +15,25 @@ public class Team
         wins=0;
         losses=0;
         ties=0;
+        teamSize = 0;
     }
 
     public void addPlayer(Player player)
     {
-        if (players.size() < this.teamSizeCap)
-            players.add(player);
+//        if (players.size() < this.teamSizeCap) {
+//        	players.add(player);
+//        	teamSize++;
+//        }
+    	
+    	players.add(player);
+    
             
-        return;
     }
 
     public void removePlayer(Player player)
     {
         players.remove(player);
+        teamSize--;
         return;
     }
 
@@ -64,13 +70,17 @@ public class Team
 
     public int getTeamSize()
     {
-        return this.teamSize;
+        return players.size();
     }
 
 	public int getTeamSizeCap() {
 		return teamSizeCap;
 	}
-
+	
+	public void setTeamSizeCap(int i) {
+		this.teamSize = i;
+	}
+ 
 	public int getWins() {
 		return wins;
 	}
@@ -87,6 +97,10 @@ public class Team
 		return players;
 	}
 	
+	public Player getPlayer(int i) {
+		return players.get(i);
+	}
+	
 	public int getTeamWeeklyScore() {
 		int teamWeeklyScore=0;
 		for(Player player: players) {
@@ -95,8 +109,6 @@ public class Team
 		
 		return teamWeeklyScore;
 	}
-	
-	
     
     
 }
