@@ -76,9 +76,9 @@ public class StartScreen extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				DisplayPlayersScreen dps = new DisplayPlayersScreen();
+				MainFrame mf = new MainFrame();
 				setVisible(false);
-				dps.setVisible(true);
+				mf.setVisible(true);
 			}
 		});
 		

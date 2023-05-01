@@ -21,7 +21,6 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 
 /**
  * 
- * @author Kamir Walton
  * 
  * This class creates the screen that displays the list of players and will potentially house the rest of the screens
  *
@@ -33,9 +32,13 @@ public class DisplayPlayersScreen extends JFrame {
 	private JList listTeam1;
 	private double tmTtlPoints1;
 	private double tmTtlPoints2;
-	Team team1 = new Team("Red Pythons");
-	Team team2 = new Team("Java Warriors");
 	private JList listTeamWinner;
+	Team team1 = new Team("Team 2");
+	
+	// Pulling these variable from the mainFrame class
+	static Team team2 = null;
+	static String username = null;
+	
 	DefaultListModel teamList1 = new DefaultListModel();
 	DefaultListModel teamList2 = new DefaultListModel();
 	DefaultListModel<String> winner = new DefaultListModel<String>();
@@ -156,14 +159,14 @@ public class DisplayPlayersScreen extends JFrame {
 			}
 		});
 		
-		JLabel lblTeam1 = new JLabel("Username");
-		lblTeam1.setFont(new Font("Dialog", Font.PLAIN, 10));
+		JLabel lblTeam1 = new JLabel(username);
+		lblTeam1.setFont(new Font("Dialog", Font.BOLD, 13));
 		
-		JLabel lblNewLabel = new JLabel("Team1");
+		JLabel lblNewLabel = new JLabel(team2.getName());
 		lblNewLabel.setFont(new Font("Dialog", Font.PLAIN, 18));
 		
 		JLabel lblTeam2 = new JLabel("Username");
-		lblTeam2.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblTeam2.setFont(new Font("Dialog", Font.BOLD, 13));
 		
 		JScrollPane scpTeam2 = new JScrollPane();
 		
@@ -175,27 +178,20 @@ public class DisplayPlayersScreen extends JFrame {
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-							.addGroup(gl_panel.createSequentialGroup()
-								.addComponent(scpTeam1, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-									.addComponent(btnReveal, GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-									.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
-								.addPreferredGap(ComponentPlacement.RELATED))
-							.addComponent(lblTeam1))
+						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 136, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)))
-					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
-						.addGroup(gl_panel.createSequentialGroup()
+							.addComponent(scpTeam1, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblTeam2)
-								.addComponent(lblNewLabel_1))
-							.addGap(169))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(scpTeam2)
-							.addContainerGap())))
+								.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnReveal, GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)))
+						.addComponent(lblTeam1))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblTeam2)
+						.addComponent(lblNewLabel_1)
+						.addComponent(scpTeam2, GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))
+					.addContainerGap())
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
@@ -209,18 +205,17 @@ public class DisplayPlayersScreen extends JFrame {
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(lblTeam2))
 						.addComponent(lblTeam1))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(147)
-							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(btnReveal))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-								.addComponent(scpTeam2, GroupLayout.PREFERRED_SIZE, 279, GroupLayout.PREFERRED_SIZE)
-								.addComponent(scpTeam1, GroupLayout.PREFERRED_SIZE, 276, GroupLayout.PREFERRED_SIZE))))
-					.addContainerGap(19, Short.MAX_VALUE))
+						.addComponent(scpTeam1, GroupLayout.PREFERRED_SIZE, 276, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+							.addComponent(scpTeam2, Alignment.LEADING)
+							.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+								.addGap(136)
+								.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(btnReveal))))
+					.addContainerGap(18, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 		tabbedPane.setBackgroundAt(1, Color.RED);
@@ -232,7 +227,7 @@ public class DisplayPlayersScreen extends JFrame {
 		contentPane.add(lblTitleLabel);
 		
 		JTextArea txtrWinner = new JTextArea();
-		txtrWinner.setText("             Winner");
+		txtrWinner.setText("              Winner");
 		scrollPane.setColumnHeaderView(txtrWinner);
 		
 		listTeamWinner = new JList(winner);

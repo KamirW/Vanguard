@@ -1,9 +1,11 @@
 import java.util.LinkedList;
+import java.util.*;
 
 public class League {
 	private String name, manager;
 	private int pointMax;
-	private LinkedList<Team> teams;
+	private LinkedList<Team> teams = new LinkedList<Team>();
+	private ArrayList<User> users = new ArrayList<User>();
 
 	public League(String name, String manager, int pointMax, LinkedList teams) {
 		this.name = name;
@@ -55,6 +57,18 @@ public class League {
 
 	public int getPointMax() {
 		return pointMax;
+	}
+	
+	public void addUser(User user) {
+		users.add(user);
+	}
+	
+	public User getUser(int i) {
+		return users.get(i);
+	}
+	
+	public Team getTeam(int i) {
+		return teams.get(i);
 	}
 
 	

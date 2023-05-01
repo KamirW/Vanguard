@@ -1,4 +1,3 @@
-import Team;
 
 public class Player
 {
@@ -60,7 +59,10 @@ public class Player
     {
         return this.name;
     }
-
+    
+    public String toString() {
+    	return name + ", " + position + ", " + points;
+    }
 
 
 }

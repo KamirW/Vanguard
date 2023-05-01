@@ -26,8 +26,11 @@ public class Team
 //        }
     	
     	players.add(player);
+         
+    }
     
-            
+    public void setTeamName(String name) {
+    	this.name = name;
     }
 
     public void removePlayer(Player player)

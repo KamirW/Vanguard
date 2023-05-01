@@ -1,11 +1,23 @@
-import Team;
-import League;
 import java.util.ArrayList;
 
 public class User
 {
-    Team team;
-    ArrayList<League> leagues = new ArrayList<League>();
+    private Team team;
+    private ArrayList<League> leagues = new ArrayList<League>();
+    private String name;
+    
+public User(String name) {
+		
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
     public void createLeague(String name)
     {
@@ -18,5 +30,7 @@ public class User
         // Don't really think I'm too clear on the functionality of this 
         return;
     }
+    
+    
 
 }
